@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>org.example.yearning-idea</id>
+    <name>yearning-idea</name>
+    <vendor email="homeanter@163.com" url="http://github.con/homeanter/yearning-idea">yearning-idea</vendor>
+
+    <description><![CDATA[
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p>
+    <p>11111</p><p>11111</p>
+    <p>11111</p>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="com.github.homeant.yearning.config.YearningSettingsStore"/>
+        <projectConfigurable parentId="tools" displayName="Yearning" instance="com.github.homeant.yearning.config.YearningConfigurable" nonDefaultProject="true"/>
+    </extensions>
+
+    <actions>
+
+    </actions>
+</idea-plugin>
