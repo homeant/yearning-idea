@@ -9,15 +9,27 @@
     <p>11111</p>
     <p>11111</p><p>11111</p>
     <p>11111</p>
+    <p>11111</p>
+    <p>11111</p><p>11111</p>
+
     ]]></description>
 
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends optional="true">com.intellij.database</depends>
+    <depends optional="true">com.intellij.modules.ultimate</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+
         <projectService serviceImplementation="com.github.homeant.yearning.config.YearningSettingsStore"/>
         <projectConfigurable parentId="tools" displayName="Yearning" instance="com.github.homeant.yearning.config.YearningConfigurable" nonDefaultProject="true"/>
+
+    </extensions>
+
+    <extensions defaultExtensionNs="com.intellij.database">
+
     </extensions>
 
     <actions>
