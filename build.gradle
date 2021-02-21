@@ -20,6 +20,7 @@ dependencies {
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
     compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.18'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.18'

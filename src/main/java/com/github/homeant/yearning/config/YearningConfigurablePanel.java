@@ -1,7 +1,5 @@
 package com.github.homeant.yearning.config;
 
-import com.github.homeant.yearning.YearningApplication;
-import com.github.homeant.yearning.api.domain.Login;
 import com.github.homeant.yearning.domain.YearningSettings;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.project.Project;
@@ -15,8 +13,6 @@ import okhttp3.Response;
 
 import javax.swing.*;
 import java.util.Optional;
-
-import static com.github.homeant.yearning.utils.YearningUtils.getService;
 
 @Slf4j
 public class YearningConfigurablePanel implements Disposable {
