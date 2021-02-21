@@ -1,7 +1,12 @@
+import org.jetbrains.changelog.ExtensionsKt
+
 plugins {
     id 'java'
     id 'org.jetbrains.intellij' version '0.6.5'
+    id 'org.jetbrains.changelog' version '1.1.2'
 }
+
+apply plugin: 'org.jetbrains.changelog'
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -20,20 +25,32 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.18'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-    compile fileTree(include: ['*.jar'], dir: ideaSDKlocalPath + '/Contents/plugins/DatabaseTools/lib')
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     version '2020.3.2'
     type 'IU'
-    plugins ['com.intellij.database']
+    plugins 'com.intellij.database', 'java'
 }
-patchPluginXml {
-    changeNotes """
-      Add change notes here.<br>
-      <em>most HTML tags may be used</em>"""
+
+changelog {
+    version = '0.1'
+    header = { "[$version] - ${ExtensionsKt.date()}" }
+    headerParserRegex = ~/\d+\.\d+/
+    itemPrefix = "-"
+    keepUnreleasedSection = true
+    unreleasedTerm = "[Unreleased]"
+    groups = ["Added", "Changed", "Deprecated", "Removed", "Fixed", "Security"]
 }
+
+tasks {
+    patchPluginXml {
+        changeNotes({ changelog.getUnreleased().toHTML() })
+    }
+}
+
+
 test {
     useJUnitPlatform()
 }

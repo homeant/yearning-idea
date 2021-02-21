@@ -1,21 +1,22 @@
 package com.github.homeant.yearning;
 
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.ui.IconManager;
+import icons.DatabaseIcons;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.awt.*;
+
 
 public class Icons {
 
-    public static final Icon FILE_SQL = load("/image/file/SQLFile.png");
+    public static final Icon LOGO = load("/img/yearning-logo.png");
 
-    public static final Icon RUN = load("/image/run1.png");
-
-    private static Icon load(String path) {
-        try {
-            return IconLoader.findIcon(path);
-        } catch (Exception t) {
-            return  load("/image/common/Warning.png");
-        }
+    @NotNull
+    private static Icon load(@NotNull String path) {
+        Icon var10000 = IconLoader.getIcon(path,Icons.class);
+        return var10000;
     }
+
+
 }

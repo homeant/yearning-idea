@@ -14,7 +14,7 @@ import org.jetbrains.annotations.Nullable;
 
 import static com.github.homeant.yearning.utils.YearningUtils.getService;
 
-@State(name = "YearningSettings", storages = {@Storage("yearning.xml")})
+@State(name = "YearningSettings", storages = {@Storage("yearning-drivers.xml")})
 public class YearningSettingsStore implements PersistentStateComponent<YearningSettings> {
 
     private YearningSettings settings = new YearningSettings();

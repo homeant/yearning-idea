@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<drivers>
+    <driver id="yearning-mysql" name="Yearning-mysql" icon="/img/yearning-logo.png" dialect="Yearning-mysql" driver-class="com.github.homeant.yearning.jdbc.YearningDriver">
+        <artifact name="Yearning" use="true" rolling="true"/>
+        <url-template name="URL" template="jdbc:yearning://{host}[:{port::443}]"/>
+    </driver>
+</drivers>
