@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <artifacts>
-    <artifact version="1.9.4" name="Yearning-mysql">
+    <artifact version="1.9.4" name="Yearning-MySQL">
         <item name="yearning-connector-1.9.4.jar"
               url="https://repo1.maven.org/maven2/org/tarantool/connector/1.9.4/connector-1.9.4.jar" md5=""/>
         <item name="yearning-license.txt"

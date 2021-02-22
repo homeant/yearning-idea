@@ -31,9 +31,9 @@
                           implementationClass="com.github.homeant.yearning.database.dialects.mysql.MysqlDialect"
                           order="first"/>
         <database.dbms instance="com.github.homeant.yearning.database.dialects.mysql.MysqlHolder.DBMS"/>
-        <lang.syntaxHighlighterFactory language="Yearning-mysql"
+        <lang.syntaxHighlighterFactory language="Yearning-MySQL"
                                        implementationClass="com.github.homeant.yearning.sql.dialects.mysql.MysqlSyntaxHighlighterFactory"/>
-        <lang.parserDefinition language="Yearning-mysql"
+        <lang.parserDefinition language="Yearning-MySQL"
                                implementationClass="com.github.homeant.yearning.sql.dialects.mysql.MysqlParserDefinition"/>
     </extensions>
 

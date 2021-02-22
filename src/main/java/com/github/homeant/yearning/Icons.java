@@ -14,8 +14,7 @@ public class Icons {
 
     @NotNull
     private static Icon load(@NotNull String path) {
-        Icon var10000 = IconLoader.getIcon(path,Icons.class);
-        return var10000;
+        return IconLoader.getIcon(path,Icons.class);
     }
 
 

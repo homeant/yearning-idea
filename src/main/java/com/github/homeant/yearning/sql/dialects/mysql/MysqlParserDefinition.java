@@ -6,7 +6,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.tree.IFileElementType;
 import com.intellij.sql.dialects.base.SqlElementFactory;
 import com.intellij.sql.dialects.base.SqlParserDefinitionBase;
-import com.intellij.sql.dialects.mysql.MysqlDialect;
 import com.intellij.sql.psi.stubs.SqlFileElementType;
 import org.jetbrains.annotations.NotNull;
 
@@ -14,25 +13,28 @@ public class MysqlParserDefinition extends SqlParserDefinitionBase {
 
     private static final IFileElementType MYSQL_SQL_FILE;
 
+    private static final com.intellij.sql.dialects.mysql.MysqlParserDefinition MYSQL_PARSER_DEFINITION;
+
     static {
-        MYSQL_SQL_FILE = new SqlFileElementType("YEARNING_SQL_FILE", MysqlDialect.INSTANCE);
+        MYSQL_SQL_FILE = new SqlFileElementType("YEARNING_SQL_FILE", MysqlSqlDialect.INSTANCE);
+        MYSQL_PARSER_DEFINITION = new com.intellij.sql.dialects.mysql.MysqlParserDefinition();
     }
 
-    private com.intellij.sql.dialects.mysql.MysqlParserDefinition mysqlParserDefinition = new com.intellij.sql.dialects.mysql.MysqlParserDefinition();
+
 
     @Override
     protected SqlElementFactory createElementFactory() {
-        return mysqlParserDefinition.getElementFactory();
+        return MYSQL_PARSER_DEFINITION.getElementFactory();
     }
 
     @Override
     public @NotNull Lexer createLexer(Project project) {
-        return mysqlParserDefinition.createLexer(project);
+        return MYSQL_PARSER_DEFINITION.createLexer(project);
     }
 
     @Override
     public PsiParser createParser(Project project) {
-        return mysqlParserDefinition.createParser(project);
+        return MYSQL_PARSER_DEFINITION.createParser(project);
     }
 
     @Override
