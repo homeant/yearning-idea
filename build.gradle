@@ -18,9 +18,8 @@ repositories {
 dependencies {
     compile group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.1'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.18'
-    compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
     annotationProcessor 'org.projectlombok:lombok:1.18.18'
-    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.23'
 
     testCompileOnly 'org.projectlombok:lombok:1.18.18'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.18'
