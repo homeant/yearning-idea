@@ -12,14 +12,6 @@ public final class MysqlHolder {
     public static final Dbms DBMS;
 
     static {
-        try {
-            DBMS = Dbms.create(Constants.YEARNING_MY_SQL, Icons.LOGO);
-            Field ourValuesField = Dbms.class.getDeclaredField("ourValues");
-            ourValuesField.setAccessible(true);
-            ConcurrentMap<String, Dbms> ourValues = (ConcurrentMap<String, Dbms>) ourValuesField.get(null);
-            ConcurrencyUtil.cacheOrGet(ourValues, Constants.YEARNING_MY_SQL_UPPER_CASE, DBMS);
-        } catch (NoSuchFieldException | IllegalAccessException ex) {
-            throw new ExceptionInInitializerError(ex);
-        }
+        DBMS = Dbms.create(Constants.YEARNING_MY_SQL, Icons.LOGO);
     }
 }

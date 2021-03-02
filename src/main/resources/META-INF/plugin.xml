@@ -24,12 +24,14 @@
 
         <!--        <projectService serviceImplementation="com.github.homeant.yearning.config.YearningSettingsStore"/>
                 <projectConfigurable parentId="tools" displayName="Yearning" instance="com.github.homeant.yearning.config.YearningConfigurable" nonDefaultProject="true"/>-->
-        <sql.dialect dbms="YEARNING-MY-SQL"
+        <sql.dialect dbms="YEARNING-MYSQL"
                      implementationClass="com.github.homeant.yearning.sql.dialects.mysql.MysqlSqlDialect"
                      order="first"/>
-        <database.dialect dbms="YEARNING-MY-SQL"
+        <database.dialect dbms="YEARNING-MYSQL"
                           implementationClass="com.github.homeant.yearning.database.dialects.mysql.MysqlDialect"
                           order="first"/>
+        <lang.quoteHandler language="Yearning-MySQL" implementationClass="com.intellij.sql.editor.SqlQuoteHandler"/>
+        <lang.commenter language="Yearning-MySQL" implementationClass="com.intellij.sql.dialects.mysql.MysqlCommenter"/>
         <database.dbms instance="com.github.homeant.yearning.database.dialects.mysql.MysqlHolder.DBMS"/>
         <lang.syntaxHighlighterFactory language="Yearning-MySQL"
                                        implementationClass="com.github.homeant.yearning.sql.dialects.mysql.MysqlSyntaxHighlighterFactory"/>
