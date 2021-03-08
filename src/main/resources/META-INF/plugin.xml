@@ -45,5 +45,8 @@
 
     <actions>
 
+        <action id="Yearning" class="com.github.homeant.yearning.database.YearningMenu" text="Yearning">
+            <add-to-group group-id="MainMenu" anchor="after" relative-to-action="Generate"/>
+        </action>
     </actions>
 </idea-plugin>
