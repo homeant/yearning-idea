@@ -16,6 +16,7 @@
         <driversConfig config="databaseDrivers/yearning-drivers.xml"/>
         <artifactsConfig config="databaseDrivers/database-artifacts.xml"/>
         <dbms instance="com.github.homeant.yearning.database.dialects.mysql.MysqlHolder.DBMS"/>
+        <dialect dbms="YEARNING-MYSQL" implementationClass="com.github.homeant.yearning.database.dialects.mysql.MysqlDialect"/>
         <jdbcHelper dbms="YEARNING-MYSQL" implementationClass="com.intellij.database.remote.jdbc.helpers.MysqlJdbcHelper"/>
         <modelFacade dbms="YEARNING-MYSQL" implementationClass="com.intellij.database.dialects.mysql.model.MysqlModelFacade"/>
         <domainRegistry dbms="YEARNING-MYSQL" implementationClass="com.intellij.database.dialects.mysql.MysqlDomains"/>
@@ -24,15 +25,10 @@
 
     <!-- yearning 扩展 -->
     <extensions defaultExtensionNs="com.intellij">
-
         <!--        <projectService serviceImplementation="com.github.homeant.yearning.config.YearningSettingsStore"/>
                 <projectConfigurable parentId="tools" displayName="Yearning" instance="com.github.homeant.yearning.config.YearningConfigurable" nonDefaultProject="true"/>-->
         <sql.dialect dbms="YEARNING-MYSQL"
-                     implementationClass="com.github.homeant.yearning.sql.dialects.mysql.MysqlSqlDialect"
-                     order="first"/>
-        <database.dialect dbms="YEARNING-MYSQL"
-                          implementationClass="com.github.homeant.yearning.database.dialects.mysql.MysqlDialect"
-                          order="first"/>
+                     implementationClass="com.github.homeant.yearning.sql.dialects.mysql.MysqlSqlDialect"/>
         <lang.quoteHandler language="Yearning-MySQL" implementationClass="com.intellij.sql.editor.SqlQuoteHandler"/>
         <lang.commenter language="Yearning-MySQL" implementationClass="com.intellij.sql.dialects.mysql.MysqlCommenter"/>
 
